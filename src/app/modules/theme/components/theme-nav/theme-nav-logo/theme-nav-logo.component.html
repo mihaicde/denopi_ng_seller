@@ -1,0 +1,33 @@
+
+<a (click)="goBack()" class="waves-effect waves-pink "><i class=" inline-icon material-icons">keyboard_arrow_left</i> </a>
+
+<h3>Site Title & Tag Line</h3>
+<p>
+The Site Title is used wherever the title of the site appears, while the Tag Line is used on some templates where applicable.
+</p>
+
+
+   <input [(ngModel)]="sitePreview.header.title" id="site_name" type="text" class="validate">      
+
+
+
+<h3>Logo</h3>
+<p>Upload a logo image to replace your site title. </p>
+<div class="container">
+  <image-edit [height]="'100px'" [width]="'100px'" (loadedImageSrc)="handleImageUpdate($event)"></image-edit>
+  <br>
+</div>
+
+ <input [(ngModel)]="sitePreview.header.titlePresent" type="checkbox" checked="checked" id="headerCheckbox" />
+ <label class="check-box" for="headerCheckbox">show title on header</label>
+
+
+  <!-- Switch -->
+  <div class="switch">
+    <label>
+      left
+      <input type="checkbox" [(ngModel)]="centerLogo" (click)="onChange()">
+      <span class="lever"></span>
+      center
+    </label>
+  </div>

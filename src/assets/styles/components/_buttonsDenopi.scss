@@ -1,0 +1,47 @@
+// @each $color, $value in $denopiColors {
+//   .btn-#{$color} {
+//     @include button-variant($value, $value);
+//   }
+// }
+
+// @each $color, $value in $denopiColors {
+//   .btn-outline-#{$color} {
+//     @include button-outline-variant($value, #fff);
+//   }
+// }
+
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type == "base" {
+      .btn-outline-#{$color_name} {
+        @include button-outline-variant($color_value, #fff);
+      }
+    }
+  }
+}
+
+// Shade classes
+@each $color, $color_value in $shades {
+  .btn-outline-#{$color} {
+    @if $color == "white" {
+      @include button-outline-variant($color_value, #000);
+    }
+    @else {
+      @include button-outline-variant($color_value, #fff);
+    }
+  }
+  .#{$color}-text {
+    color: $color_value !important;
+  }
+}
+
+.btn-round {
+  z-index: 1;
+  // border-radius: 30px;
+  border-radius: 1.35rem;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}

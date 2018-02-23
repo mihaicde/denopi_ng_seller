@@ -1,0 +1,115 @@
+
+html,
+body{
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-family: $font-family-comfortaa;
+}
+
+header, 
+main, 
+// footer 
+{
+  padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, 
+  main,
+  //  footer 
+   {
+    padding-left: 0;
+  }
+}
+
+body {
+  min-height: 100%;
+}
+
+main{
+  min-height:100%;
+  width:100%;
+  overflow: auto;
+  color: $fontColor;
+}
+
+.row {
+  margin-top:10px;
+}
+
+.mainContainer {
+  margin:20px;
+  padding:20px;
+}
+
+.background{
+  background-image:url(assets/images/denopi1.png);
+  background-size: 100% 100%;
+}
+
+.productSubMenu{
+  padding-left:10px;
+}
+
+// .cardContainer {
+//   color: $fontColor;
+// }
+
+.header_badges {
+  overflow: initial;
+}
+
+.themeNav {
+  padding-left:10px;
+}
+
+.divider {
+  margin-top:10px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.colorPick {
+  width:30px;
+  height:30px;
+  margin:2px;
+  border: 2px solid #000;
+  color: #000;
+    &:hover {
+      cursor: pointer;
+    }
+}
+
+.text-divider {
+  position:relative;
+  top:-1rem;
+  text-align: center;
+}
+
+// Remove these from here
+.middle-indicator{
+  position:absolute;
+  top:50%;
+  height:0px;
+}
+
+.middle-indicator-text{
+  font-size: 4.2rem;
+}
+
+a.middle-indicator-text{
+  color:white !important;
+}
+
+.content-indicator{
+  width: 64px;
+  height: 64px;
+  background: none;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px; 
+}

@@ -1,0 +1,65 @@
+
+  <div class="full-body valign-wrapper">
+    <app-notification #toast></app-notification>
+    <div class="center-align z-depth-3 row loginForm galaxy">
+      <div class="row">
+        <div class="col">
+            <img src="/assets/images/denopi1.png" style="width:7rem; vertical-align:bottom;"/>
+        </div>
+        <div class="col">
+            <span style="font-size:2.2rem;margin-top:30px; color:#18ffff;" class="my-wrapper valign-wrapper center-align"> denopi </span>
+        </div>
+      </div>
+  
+      <div class="row">
+        <h4>Sign Up</h4>
+      </div>
+
+      <form materialize [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <div class="row">
+          <div class="input-field">
+            <i class="material-icons prefix">account_box</i>
+            <input id="name" type="text" class="validate" formControlName="name">
+            <label for="name">Name</label>
+          </div>
+          <app-field-error-display [displayError]="formBuilderService.isFieldValid(registerForm, 'name')" errorMsg="Please enter your name">
+          </app-field-error-display>
+        </div>
+        <div class="row">
+          <div class="input-field">
+            <i class="material-icons prefix">email</i>
+            <input id="icon_email" type="text" class="validate" class="validate" formControlName="email">
+            <label for="icon_email">Email</label>
+          </div>
+          <app-field-error-display [displayError]="formBuilderService.isFieldValid(registerForm, 'email')" errorMsg="Email is required and format should be john@doe.com">
+          </app-field-error-display>
+        </div>
+        <div class="row">
+          <div class="input-field">
+            <i class="material-icons prefix">lock</i>
+            <input id="icon_password" type="password" class="validate" formControlName="password">
+            <label for="icon_password">Password</label>
+          </div>
+        </div>
+        <app-field-error-display [displayError]="formBuilderService.isFieldValid(registerForm, 'password')" errorMsg="Please enter your password">
+        </app-field-error-display>
+        <div class="row">
+          <!-- <button class="btn waves-effect waves-light cyan accent-3" type="submit" name="action" [disabled]="!registerForm.valid">register</button> -->
+          <button class="btn waves-effect waves-light" type="submit" name="action">register</button>
+        </div>
+      </form>
+      <br/>
+      <div class="row">
+        <span>By joining, you agree to our</span>
+      </div>
+      <div class="row">
+        <a [routerLink]="['/terms']">Termms & Conditions</a> and <a [routerLink]="['/policy']">Privacy Policy</a>
+      </div>
+      <br/>
+      <div class="divider"></div>
+      <br/>
+      <div class="row">
+        <span>Already have an account? <a [routerLink]="['/login']">Log In</a></span>
+      </div>
+    </div>
+  </div>

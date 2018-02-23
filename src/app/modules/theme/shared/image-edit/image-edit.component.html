@@ -1,0 +1,19 @@
+
+<label class="uploader " [ngStyle]="{'width': width, 'height' : height}" ondragover="return false;"
+    [class.loaded]="loaded" 
+    [style.outlineColor]="dragging ? activeColor : baseColor"
+    (drop)="handleDrop($event)">
+    
+    <i class="medium material-icons" 
+        [style.color]="dragging 
+            ? ((imageSrc.length > 0) ? overlayColor : activeColor)
+            : ((imageSrc.length > 0) ? overlayColor : baseColor)"> cloud_upload </i>
+    
+    <img 
+        [src]="imageSrc" 
+        (load)="handleImageLoad()" 
+        [class.loaded]="imageLoaded"/>
+    
+    <input type="file" name="file" accept="image/*"
+        (change)="handleInputChange($event)">
+</label>

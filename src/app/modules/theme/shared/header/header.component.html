@@ -1,0 +1,22 @@
+<nav class="teal ">
+        <div class="nav-wrapper">
+          <div class="row"> <div class="col s12">
+            
+            
+            <a (click)="navigateToPage(page)" class="brand-logo {{sitePreview.header.center}}">
+
+              <img *ngIf="sitePreview.header.logoSrc.length!=0" class="resonsive-img" id="logo" src="{{sitePreview.header.logoSrc}}" />
+              <span *ngIf="sitePreview.header.titlePresent" >{{sitePreview.header.title}} </span>
+            </a>
+            
+           
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li *ngFor="let page of pages">
+                  <a (click)="navigateToPage(page)" >{{page}}</a>
+                  </li>
+            </ul>
+
+          
+            </div></div>
+        </div>
+    </nav>

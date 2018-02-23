@@ -1,0 +1,52 @@
+<header>
+  <nav class="navAdmin" role="navigation">
+    <div class="nav-wrapper">
+      <ul materialize="collapsible" id="slide-out" class="side-nav fixed sideNavAdmin collapsible collapsible-accordion galaxy darken-1">
+        <li>
+          <div class="userView">
+            <div class="row center">
+              <h5 class="brand-logo "> <img src="../../../assets/images/denopi1.png" /> denopi </h5>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="divider"></div>
+        </li>
+        <!-- navigation Menu !-->
+     
+        <li *ngIf="sitePreview.navHomePage">
+          <a  class="collapsible-header waves-effect">
+            <i class="material-icons">apps</i> Pages
+          </a>
+          <div  class="collapsible-body productSubMenu galaxy darken-1">
+            <ul>
+              <li><a (click)="onChangePage()" [routerLink]="[{ outlets: { design: 'pages' } }]">Edit Pages</a></li>
+              <li><a (click)="onChangePage()" [routerLink]="[{ outlets: { design: 'ThHome'} }]"><i class="material-icons">description</i>Home </a></li>
+              <li><a class="waves-effect waves" [routerLink]="['contact']"><i class="material-icons">description</i>Contact</a></li>
+              <li><a class="waves-effect waves" [routerLink]="['about']"><i class="material-icons">description</i>About</a></li>
+              <li><a class="waves-effect waves" [routerLink]="['help']"><i class="material-icons">description</i>Help</a></li>
+              <li><a class="waves-effect waves" [routerLink]="['store']"><i class="material-icons">description</i>Store</a></li>
+              <li><a class="waves-effect waves" [routerLink]="['schedule']"><i class="material-icons">description</i>Calendar</a></li>
+            </ul>
+          </div>
+        </li>
+
+
+         <li *ngIf="sitePreview.navHomePage">
+          <a  class="collapsible-header waves-effect">
+            <i class="material-icons">apps</i> Site Design
+          </a>
+          <div  class="collapsible-body productSubMenu galaxy darken-1">
+              <ul>
+                <li><a (click)="onChangePage()" [routerLink]="[{ outlets: { design: 'logo' } }]"><i class="material-icons">description</i>Title and Logo</a></li>
+                <li><a class="waves-effect waves" [routerLink]="['contact']"><i class="material-icons">description</i>Colors</a></li>
+              </ul>
+            </div>
+         </li>
+
+         <router-outlet name="design" ></router-outlet>
+      </ul>
+      <a href="#" materialize="sideNav" [materializeParams]="[{edge:'left'}]" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+</header>

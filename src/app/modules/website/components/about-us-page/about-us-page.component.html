@@ -1,0 +1,39 @@
+<div class="row container">
+  <div class="center-div">
+    <div class="card z-depth-3 galaxy">
+      <div class="card-content white-text">
+        <span class="card-title center-align">Pagina Despre Noi</span>
+        <p>
+          Pagina Despre Noi contine dataliile website-ului. Ex: Cine suntem? Ce facem?
+        </p>
+        <p>
+          Doriti sa aveti pagina Despre Noi in aplicatie?
+        </p>
+        <br/>
+        <form materialize #f="ngForm">
+            <p>
+              <input class="with-gap" name="aboutPage" type="radio" id="about1" 
+                [(ngModel)]="aboutPage" value="1"/>
+              <label for="about1">Da</label>
+      
+              <input class="with-gap" name="aboutPage" type="radio" id="about2" 
+                [(ngModel)]="aboutPage" value="0"/>
+              <label for="about2">Nu</label>
+            </p>
+          </form>
+      </div>
+      <div class="card-action">
+        <button class="btn waves-effect waves-light purple darken-2" name="action"
+          (click)="back()">
+          <span>Inapoi</span>
+        </button>
+        <button (click)="select()" 
+          class="btn waves-effect waves-light cyan" 
+          type="submit" name="action" 
+          [disabled]="!aboutPage">
+          <span>Urmatorul</span>
+        </button> 
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<a (click)="goBack()" class="waves-effect waves-pink "><i class=" inline-icon material-icons">keyboard_arrow_left</i> </a>
+
+<p>This page has the following sections:</p>
+
+<ul class="section table-of-contents">
+        <li *ngFor="let section of sitePreview.homeModel.sections; let i = index ">
+          <a (click)="goToSection(i+1)">{{section}} in Section {{i+1}}</a></li>
+            
+           <template #dynamic></template>
+    </ul>

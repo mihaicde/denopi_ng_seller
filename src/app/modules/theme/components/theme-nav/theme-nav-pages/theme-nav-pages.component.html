@@ -1,0 +1,13 @@
+<a (click)="goBack()" class="waves-effect waves-pink "><i class=" inline-icon material-icons">keyboard_arrow_left</i> </a>
+
+
+<h3>Site Pages</h3>
+<p>Choose the pages you want to show up in your site, and click on tab on the left to edit them
+</p>
+
+<ul>
+  <li *ngFor="let page of pages; let i of index">
+    <input (click)="checkPageValue(page,i)" type="checkbox" id="{{page.name}}" checked="{{page.active}}">
+    <label for="{{page.name}}">{{page.name}}</label>
+  </li>
+</ul>
